@@ -1,0 +1,91 @@
+:root {
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+}
+
+.node {
+  cursor: pointer;
+  padding: 10px;
+}
+
+.node:hover {
+  background-color: lightblue;
+}
+
+.node-user {
+  color: #555;
+}
+
+.node-org {
+
+}
+
+.App {
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid lightgrey;
+  background: #FEFEFE;
+}
+
+.tool-bar {
+  padding: 5px;
+  border: 1px solid lightgrey;
+  /*display: inline-block;*/
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.breadcrumb-bar {
+  display: inline-block;
+}
+
+.breadcrumb-link {
+  color: #777;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.breadcrumb-link:hover {
+  color: blue;
+}
+
+.tool-bar button {
+  cursor: pointer;
+  padding: 10px;
+  border: none;
+  background: none;
+}
+
+.tool-bar button:not(disabled):hover {
+  background: #eee;
+  border-radius: 15px;
+}
+
+.node-content {
+  margin-top: 10px;
+}
+
+.node img {
+  clip-path: circle();
+}
+
+.tool-bar input {
+  border: 1px solid lightgrey;
+  height: 25px;
+  border-radius: 3px;
+}
+
+.tool-bar input:focus {
+  border: 1px solid grey;
+}
