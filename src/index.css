@@ -21,7 +21,7 @@ body {
 }
 
 .node:hover {
-  background-color: lightblue;
+  background-color: #F4F4F4;
 }
 
 .node-user {
