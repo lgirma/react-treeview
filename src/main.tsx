@@ -2,7 +2,6 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import {TreeView} from './TreeView'
 import './index.css'
-import '@fortawesome/fontawesome-free/css/all.css'
 import {DefaultTreeDataService, NewLeaf, NewNode} from "./common";
 
 const rootDir = NewNode('aacity', 'Addis Ababa City',

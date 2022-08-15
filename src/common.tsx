@@ -53,11 +53,26 @@ export const DefaultTreeDataService : TreeDataService<TreeNode> = {
     },
     toolbar(node: TreeNode) {
         return <button onClick={e => {
-            alert('Got: ' + node.name)
+            GetAllDescendantLeaves(this, node)
+                .then(res => alert('Got: ' + res.length + ' descendants.'))
             e.stopPropagation()
         }}>Go</button>
     },
     onItemClicked(n: TreeNode) {
         alert('Selected: ' + n.name)
     }
+}
+
+export async function GetAllDescendantLeaves<TNode extends ITreeNode>(service:  TreeDataService<TNode>, root: TNode): Promise<TNode[]> {
+    let result : TNode[] = []
+    const children = (await service.getChildren(root))
+    const leaves = children.filter(c => service.isLeaf(c))
+    const nonLeaves = children.filter(c => !service.isLeaf(c))
+    for (let i = 0; i < leaves.length; i++) {
+        result.push(leaves[i])
+    }
+    for (let i = 0; i < nonLeaves.length; i++) {
+        result = result.concat(await GetAllDescendantLeaves(service, nonLeaves[i]))
+    }
+    return result
 }
